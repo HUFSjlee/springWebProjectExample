@@ -5,9 +5,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class Ex1ApplicationTests {
-
     @Test
     void contextLoads() {
+        System.out.println("contextLoads...");
     }
 
 }

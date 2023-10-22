@@ -38,9 +38,9 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    compileOnly 'org.mariadb.jdbc:mariadb-java-client'
+    runtimeOnly('org.mariadb.jdbc:mariadb-java-client')
     compileOnly 'org.thymeleaf.extras:thymeleaf-extras-java8time'
-    //implementation 'com.querydsl:querydsl-jpa'
+    implementation 'com.querydsl:querydsl-jpa'
     implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
     implementation "com.querydsl:querydsl-apt:${queryDslVersion}"
 }

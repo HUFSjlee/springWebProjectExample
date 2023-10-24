@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.zerock.guestbook.entity.Guestbook;
 
+import java.util.Optional;
 import java.util.stream.IntStream;
 
 @SpringBootTest
@@ -25,5 +26,20 @@ public class GuestbookRepositoryTests {
                     .build();
             System.out.println(guestbookRepository.save(guestbook));
         });
+    }
+
+    @Test
+    public void updateTest() {
+        Optional<Guestbook> result = guestbookRepository.findById(300L);
+
+        //존재하는 번호로 테스트
+        if(result.isPresent()) {
+            Guestbook guestbook = result.get();
+
+            guestbook.changeTitle("Changed Title...");
+            guestbook.changeContent("Changed Content...");
+
+            guestbookRepository.save(guestbook);
+        }
     }
 }

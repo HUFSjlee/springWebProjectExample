@@ -16,12 +16,12 @@ import org.zerock.guestbook.service.GuestbookService;
 public class GuestbookController {
     private final GuestbookService service;
 
-    @GetMapping({"/","/list"})
-    public String list() {
-        log.info("list........");
-
-        return "/guestbook/list";
-    }
+//    @GetMapping({"/","/list"})
+//    public String list() {
+//        log.info("list........");
+//
+//        return "/guestbook/list";
+//    }
 
     @GetMapping("/")
     public String index() {

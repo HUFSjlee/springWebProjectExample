@@ -63,4 +63,6 @@ public class GuestbookController {
 
         model.addAttribute("dto", dto);
     }
+
+    //@GetMapping("read")
 }

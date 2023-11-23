@@ -46,6 +46,16 @@
                 .attr("method", "post");
         actionForm.submit();
       });
+
+      $(".modifyBtn").click(function() {
+        if(!confirm("수정하시겠습니다?")) {
+          return;
+        }
+        actionForm
+                .attr("action", "/guestbook/modify")
+                .attr("method","post")
+                .submit();
+      });
     </script>
 
 

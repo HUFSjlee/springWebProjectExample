@@ -44,7 +44,9 @@ public class GuestbookServiceImpl implements  GuestbookService {
     public PageResultDTO<GuestbookDTO, Guestbook> getList(PageRequestDTO requestDTO) {
         Pageable pageable = requestDTO.getPageable(Sort.by("gno").descending());
 
-        Page<Guestbook> result = repository.findAll(pageable);
+        BooleanBuilder booleanBuilder = getSearch(requestDTO); //검색 조건 처리
+
+        Page<Guestbook> result = repository.findAll(booleanBuilder, pageable); //querydsl 사용
 
         Function<Guestbook, GuestbookDTO> fn = (entity -> entityToDto(entity));
 

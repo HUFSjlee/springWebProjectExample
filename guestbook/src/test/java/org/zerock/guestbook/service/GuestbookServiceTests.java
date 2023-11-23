@@ -45,4 +45,6 @@ public class GuestbookServiceTests {
         resultDTO.getPageList().forEach(i -> System.out.println(i));
     }
 
+
+
 }

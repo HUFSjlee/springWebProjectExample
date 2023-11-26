@@ -45,6 +45,7 @@ public class GuestbookServiceTests {
         resultDTO.getPageList().forEach(i -> System.out.println(i));
     }
 
+    //아래 테스트 코드 에러 확인해야함.
     @Test
     public void testSearch() {
         PageRequestDTO pageRequestDTO = PageRequestDTO.builder()

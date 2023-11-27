@@ -55,7 +55,7 @@ public class GuestbookServiceTests {
                 .keyword("한글")
                 .build();
 
-        PageRequestDTO<GuestbookDTO, Guestbook> resultDTO = service.getList(pageRequestDTO);
+        PageResultDTO<GuestbookDTO, Guestbook> resultDTO = service.getList(pageRequestDTO);
 
         System.out.println("PREV: " + resultDTO.isPrev());
         System.out.println("NEXT: " + resultDTO.isNext());

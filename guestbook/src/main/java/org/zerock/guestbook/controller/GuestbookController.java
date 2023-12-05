@@ -87,7 +87,6 @@ public class GuestbookController {
         redirectAttributes.addAttribute("type",requestDTO.getType());
         redirectAttributes.addAttribute("keyword",requestDTO.getKeyword());
         redirectAttributes.addAttribute("gno",dto.getGno());
-
         return "redirect:/guestbook/read";
     }
 }

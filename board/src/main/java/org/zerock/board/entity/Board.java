@@ -1,9 +1,6 @@
 package org.zerock.board.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -11,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@ToString
+@ToString(exclude = "writer") //@ToString 은 항상 exclude
 public class Board extends BaseEntity {
 
     @Id
@@ -21,5 +18,8 @@ public class Board extends BaseEntity {
     private String title;
 
     private String content;
+
+    @ManyToOne
+    private Member writer; //연관 관계 지정
 
 }

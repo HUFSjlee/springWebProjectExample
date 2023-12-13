@@ -1,9 +1,6 @@
 package org.zerock.board.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -11,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@ToString
+@ToString(exclude = "board") //@ToString 주의
 public class Reply extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,4 +17,7 @@ public class Reply extends BaseEntity{
     private String text;
 
     private String replyer;
+
+    @ManyToOne
+    private Board board; //연관관계 지정
 }

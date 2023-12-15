@@ -2,6 +2,7 @@ package org.zerock.board.repository;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.webservices.server.WebServiceServerTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cache.interceptor.BeanFactoryCacheOperationSourceAdvisor;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,6 +10,7 @@ import org.zerock.board.entity.Board;
 import org.zerock.board.entity.Member;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
@@ -52,5 +54,14 @@ public class BoardRepositoryTests {
 
         System.out.println("------------------------");
         System.out.println(Arrays.toString(arr));
+    }
+
+    @Test
+    public void testGetBoardWithReply() {
+        List<Object[]> result = boardRepository.getBoardWithReply(100L);
+
+        for(Object[] arr : result) {
+            System.out.println(Arrays.toString(arr));
+        }
     }
 }

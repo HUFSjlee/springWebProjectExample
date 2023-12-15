@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cache.interceptor.BeanFactoryCacheOperationSourceAdvisor;
+import org.springframework.transaction.annotation.Transactional;
 import org.zerock.board.entity.Board;
 import org.zerock.board.entity.Member;
 
@@ -32,6 +33,7 @@ public class BoardRepositoryTests {
         });
     }
 
+    @Transactional
     @Test
     public void testRead1() {
         Optional<Board> result = boardRepository.findById(100L); //데이터베이스에 존재하는 번호

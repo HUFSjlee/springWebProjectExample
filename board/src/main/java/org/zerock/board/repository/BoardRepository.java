@@ -17,7 +17,7 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
     @Query("select b, r FROM Board b LEFT JOIN Reply r ON r.board = b WHERE b.bno = :bno")
     List<Object[]> getBoardWithReply(@Param("bno") Long bno);
 
-    @Query(value = "SELECT b, w count(r) " +
+    @Query(value = "SELECT b, w, count(r) " +
     " FROM Board b " +
     " LEFT JOIN b.writer w " +
     " LEFT JOIN Reply r ON r.board = b " +

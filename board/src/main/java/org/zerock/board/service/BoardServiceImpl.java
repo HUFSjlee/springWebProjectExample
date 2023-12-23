@@ -30,7 +30,9 @@ public class BoardServiceImpl implements BoardService {
         return board.getBno();
     }
 
-    public PageRequestDTO<BoardDTO, Object[]> getList(PageRequestDTO pageRequestDTO) {
+    @Override
+    public PageResultDTO<BoardDTO, Object[]> getList(PageRequestDTO pageRequestDTO) {
+
         log.info(pageRequestDTO);
 
         Function<Object[], BoardDTO> fn = (en -> entityToDTO((Board)en[0],(Member)en[1],(Long)en[2]));

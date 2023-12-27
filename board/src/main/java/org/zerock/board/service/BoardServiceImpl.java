@@ -6,7 +6,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.zerock.board.dto.BoardDTO;
-import org.zerock.board.dto.PageRequestDTO;
 import org.zerock.board.entity.Board;
 import org.zerock.board.entity.Member;
 import org.zerock.board.repository.BoardRepository;
@@ -40,6 +39,6 @@ public class BoardServiceImpl implements BoardService {
 
         Page<Object[]> result = repository.getBoardWithReplyCount(pageRequestDTO.getPageable(Sort.by("bno").descending()));
 
-        return new PageRequest<>(result, fn);
+        return new PageResultDTO<>(result, fn);
     }
 }
